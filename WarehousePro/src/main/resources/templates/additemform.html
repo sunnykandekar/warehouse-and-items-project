@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+     
+     <section>
+                
+                <div class="row">
+                     
+                     <div class="col-md-8 offset-md-2">
+                     
+                        <div class="my-card">
+                             <h1 class="text-center">Add new Items Form...!</h1>
+
+
+					<form action="" th:action="@{/processitem}" method="post" th:object="${item}">
+
+
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label">Name</label> 
+								
+						   <input type="text" class="form-control " 
+						           
+						    placeholder="Enter Name"
+								id="exampleInputEmail1" aria-describedby="emailHelp"
+						     th:value="${item.name}" name="name" required />
+						    						      
+						</div>
+						
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label">Price</label> 
+								
+						   <input type="text" class="form-control " 
+						           
+						    placeholder="Enter Price"
+								id="exampleInputEmail1" aria-describedby="emailHelp"
+						     th:value="${item.price}" name="price" required />
+						    					      
+						</div>
+						
+						</div>
+						
+						<div class="mb-3">
+							<label for="exampleInputEmail1" class="form-label">Quantity</label> 
+								
+						   <input type="text" class="form-control " 
+						           
+						    placeholder="Enter Quantity"
+								id="exampleInputEmail1" aria-describedby="emailHelp"
+						     th:value="${item.quantity}" name="quantity" required />
+						    					      
+						</div>
+						
+						
+						<div class="container text-center">
+							<button type="submit" class="btn btn-primary text-white">Submit</button>
+							<button type="reset" class="btn btn-warning text-white">Reset</button>
+						</div>
+					</form> <!--  // end form -->
+
+				    </div>   <!-- END My card -->
+              </div>
+                  
+        </div>
+            
+  </section>
+  
+  
+
+
+</body>
+</html>

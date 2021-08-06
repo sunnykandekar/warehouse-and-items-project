@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+ 
+ 
+
+<title>Insert title here</title>
+</head>
+<body>
+
+
+        
+ <section>
+
+  <h1 class="container text-center">ITEMS</h1>
+  
+    <br></br>
+  
+          <div>   
+                <a th:href="@{/AddItem}" href="#">AddItem</a>
+        </div>
+       <!--  table -->
+ <div>
+ 
+    <table class="table table-bordered text-center">
+  <thead class="thead-dark text-center">
+    <tr>
+      <th scope="col">Item.id</th>
+      <th scope="col">Item Name</th>
+      <th scope="col">Item Price</th>
+      <th scope="col">Quantity </th>   
+      <th scope="col">Action hello</th>     
+    
+    </tr>
+  </thead>
+  <tbody>
+			 <!-- traverse and store data val
+			// here used key val(data) of model attribute from controller. and "b manually -->
+			
+			 <tr th:each="b: ${data}">
+				<th th:text="${b.id}"></th>
+				<td th:text="${b.name}"></td>
+				<td th:text="${b.price}"></td>
+				<td th:text="${b.quantity}"></td>
+				
+			<td class=" text-left"><a th:href="@{'update/'+${b.id}}"><i class="fas fa-edit text-primary" style="font-size:15px;">Edit</i></a>
+			
+			&nbsp; &nbsp; &nbsp; &nbsp;
+       <a th:href="@{'delete/'+${b.id}}"><i class="fas fa-trash text-danger" style="font-size:15px;">Delete</i></a></td>
+    </tr>
+			 
+		</tbody>
+   </table>
+</div>
+    
+	
+
+  </section>
+
+</body>
